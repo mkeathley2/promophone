@@ -2,7 +2,7 @@ import pygame
 
 
 
-def play():
+def OffHook():
 
     print("Playing MP3 File...")
 
@@ -17,7 +17,7 @@ def play():
 
     return
 
-def stop():
+def OnHook():
     print("Stop Playing File...")
 
     pygame.mixer.music.stop()
@@ -25,3 +25,7 @@ def stop():
     return
 
 
+def Ring():
+    print("I'm Ringing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+    return
