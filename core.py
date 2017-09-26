@@ -24,7 +24,7 @@ def OffHook():
         if hook.is_pressed:
             pygame.time.Clock().tick(10)
         else:
-            pygame.mixer.music.stop()
+            OnHook()
             break
 
     print("Done Playing...")
