@@ -50,12 +50,12 @@ def CheckForUpdate():
     path = "/media/pi/"
     dirs = os.listdir(path)
 
-    for file in dirs:
+    for dir in dirs:
 
-        update_path = path + file
+        update_path = path + dir
         print(update_path)
 
-        update_path_full = update_path + update_file
+        update_path_full = update_path + '/' + update_file
 
         if os.path.isfile(update_path_full):
             shutil.copy(update_path_full, promo_file_location)
