@@ -52,7 +52,7 @@ def Ring():
 
     print("Playing Ring File...")
 
-   #Mute Left Channel, Turn Right to 100%
+   # Mute Left Channel, Turn Right to 100%
     os.system("amixer -c 1 sset PCM,0 0%,100% unmute")
 
     pygame.mixer.init()
@@ -60,8 +60,9 @@ def Ring():
 
     pygame.mixer.music.play()
 
-    while pygame.mixer.music.get_busy() is True:
-        continue
+    while pygame.mixer.music.get_busy():
+        if hook.is_pressed:
+            break
 
     print("Done Playing...")
 
