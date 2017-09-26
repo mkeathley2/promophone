@@ -7,7 +7,7 @@ from time import sleep
 Default_Frequency = 60
 Lunch_Frequency = 15
 
-hook = Button(2)
+hook = core.hook
 
 while True:
     if datetime.now().hour >= 11 and datetime.now().hour < 14:

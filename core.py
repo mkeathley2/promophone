@@ -4,6 +4,7 @@ import sys
 import shutil
 
 import pyaudio
+from gpiozero import Button
 
 p = pyaudio.PyAudio()
 pygame.init()
@@ -11,7 +12,7 @@ pygame.init()
 
 update_file = "PromoPhone.mp3"
 promo_file_location = "./"
-
+hook = Button(2)
 
 def OffHook():
     print("Playing MP3 File...")
@@ -20,7 +21,11 @@ def OffHook():
     pygame.mixer.music.load("PromoPhone.mp3")
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
-        pygame.time.Clock().tick(10)
+        if hook.is_pressed:
+            pygame.time.Clock().tick(10)
+        else:
+            pygame.mixer.music.stop()
+            break
 
     print("Done Playing...")
 
