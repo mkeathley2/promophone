@@ -13,6 +13,8 @@ pygame.init()
 update_file = "PromoPhone.mp3"
 promo_file_location = "./"
 hook = Button(2)
+Default_Frequency = 60
+Lunch_Frequency = 15
 
 def OffHook():
     print("Playing MP3 File...")
