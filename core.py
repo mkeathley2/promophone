@@ -70,7 +70,7 @@ def CheckForUpdate():
             print("PromoPhone.mp3 not found. Make sure file is on root of flash drive.")
             continue
 
-    play_missing_file_error()
+    # play_missing_file_error()
     return
 
 
