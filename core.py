@@ -19,7 +19,7 @@ def OffHook():
     pygame.mixer.init()
     pygame.mixer.music.load("PromoPhone.mp3")
     pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy() is True:
+    while pygame.mixer.music.get_busy():
         pygame.time.Clock().tick(10)
 
     print("Done Playing...")
