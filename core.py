@@ -16,7 +16,7 @@ def OffHook():
     print("Playing MP3 File...")
 
     pygame.mixer.init()
-    pygame.mixer.music.load("/home/pi/test.mp3")
+    pygame.mixer.music.load("PromoPhone.mp3")
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy() is True:
 
@@ -44,12 +44,13 @@ def CheckForUpdate():
     path = "/media/pi/"
     dirs = os.listdir(path)
 
-    for file in dirs:
+    for dir in dirs:
 
-        update_path = path + file
+        update_path = path + dir
         print(update_path)
 
-        update_path_full = update_path + update_file
+        update_path_full = update_path + "/" + update_file
+        print(update_path_full)
 
         if os.path.isfile(update_path_full):
             shutil.copy(update_path_full, promo_file_location )
