@@ -6,7 +6,7 @@ import shutil
 import pyaudio
 
 p = pyaudio.PyAudio()
-
+pygame.init()
 # Varibles
 
 update_file = "PromoPhone.mp3"
