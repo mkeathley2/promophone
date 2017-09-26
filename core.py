@@ -19,6 +19,9 @@ Lunch_Frequency = 15
 def OffHook():
     print("Playing MP3 File...")
 
+    # Mute Right Channel, Turn Left to 100%
+    os.system("amixer -c 1 sset PCM,0 100%,0% unmute")
+
     pygame.mixer.init()
     pygame.mixer.music.load(audio_file)
     pygame.mixer.music.play()
@@ -43,7 +46,25 @@ def OnHook():
 
 
 def Ring():
+
+
     print("I'm Ringing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+    print("Playing Ring File...")
+
+   #Mute Left Channel, Turn Right to 100%
+    os.system("amixer -c 1 sset PCM,0 0%,100% unmute")
+
+    pygame.mixer.init()
+    pygame.mixer.music.load("Ring.mp3")
+
+    pygame.mixer.music.play()
+
+    while pygame.mixer.music.get_busy() is True:
+        continue
+
+    print("Done Playing...")
+
 
     return
 
