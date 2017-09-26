@@ -10,7 +10,7 @@ Lunch_Frequency = 15
 
 hook = Button(2)
 
-
+usb_dev = core.get_usb_index()
 
 
 while True:
