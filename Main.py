@@ -17,6 +17,7 @@ while True:
 
     if hook.is_pressed:
         core.CheckForUpdate()
+    while hook.is_pressed:
         core.OffHook()
     if datetime.now().minute % Frequency == 0 and datetime.now().second == 10:
         core.Ring()
