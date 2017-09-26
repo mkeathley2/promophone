@@ -4,7 +4,7 @@ import pygame
 os.system("export AUDIODEV=hdmi:0,0")
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load('PromoPhone.mp3')
+pygame.mixer.music.load('UpdateError.mp3')
 pygame.mixer.music.play()
 while pygame.mixer.music.get_busy():
 	pygame.time.Clock().tick(10)
