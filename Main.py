@@ -3,7 +3,12 @@ from datetime import datetime
 from time import sleep
 
 while True:
-    if datetime.now().hour >= 11 and datetime.now().hour < 14:
+    c_time = datetime.now()
+
+    if c_time.hour <= 9 or c_time.hour >= 22:
+        sleep(3600)
+
+    if c_time.hour >= 11 and c_time.hour < 14:
         Frequency = core.Lunch_Frequency
     else:
         Frequency = core.Default_Frequency
@@ -18,6 +23,6 @@ while True:
     # if datetime.now().minute in [31, 32]:
     #     core.Ring()
 
-    if datetime.now().minute % Frequency == 0 and datetime.now().second == 10:
+    if c_time.minute % Frequency == 0 and c_time.second == 10:
         core.Ring()
     sleep(.5)
