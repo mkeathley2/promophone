@@ -1,9 +1,7 @@
 import pygame
 import os
-import sys
 import shutil
 
-import pyaudio
 from gpiozero import Button
 
 pygame.init()
