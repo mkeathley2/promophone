@@ -23,7 +23,7 @@ while True:
         break
 
     if c_time.hour in core.lunch_hours and lunch_rings <= 2:
-        if core.rand_ring:
+        if core.rand_ring():
             core.Ring()
             lunch_rings += 1
 
@@ -32,7 +32,7 @@ while True:
     #     core.Ring()
 
     if c_time.hour in core.dinner_hours and dinner_rings <= 2:
-        if core.rand_ring:
+        if core.rand_ring():
             core.Ring()
             dinner_rings += 1
 
