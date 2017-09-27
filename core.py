@@ -33,6 +33,7 @@ def OffHook():
 
     pygame.mixer.init()
     pygame.mixer.music.load(program_directory + audio_file)
+    print("loaded file {}".format(program_directory + audio_file))
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
         if hook.is_pressed:
