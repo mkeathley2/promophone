@@ -30,7 +30,7 @@ def OffHook():
     print("Playing MP3 File...")
 
     # Mute Right Channel, Turn Left to 100%
-    os.system("amixer -c 1 sset PCM,0 100%,0% unmute")
+    os.system("amixer -c 1 sset PCM,0 80%,0% unmute")
 
 
     pygame.mixer.music.load(program_directory + audio_file)
@@ -64,7 +64,7 @@ def Ring():
     print("Playing Ring File...")
 
    # Mute Left Channel, Turn Right to 100%
-    os.system("amixer -c 1 sset PCM,0 0%,80% unmute")
+    os.system("amixer -c 1 sset PCM,0 0%,100% unmute")
 
 
     pygame.mixer.music.load(program_directory + ring_file)
