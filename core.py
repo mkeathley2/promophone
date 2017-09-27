@@ -1,5 +1,5 @@
 import random
-
+from time import sleep
 import pygame
 import os
 import shutil
@@ -28,6 +28,7 @@ ring_chance = 1
 
 def OffHook():
     print("Playing MP3 File...")
+    sleep(.75)
 
     # Mute Right Channel, Turn Left to 100%
     os.system("amixer -c 1 sset PCM,0 70%,0% unmute")
@@ -52,6 +53,7 @@ def OnHook():
     print("Stop Playing File...")
 
     pygame.mixer.music.stop()
+    sleep(1)
 
     return
 
