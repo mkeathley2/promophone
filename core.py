@@ -6,7 +6,6 @@ import shutil
 import pyaudio
 from gpiozero import Button
 
-p = pyaudio.PyAudio()
 pygame.init()
 # Varibles
 
@@ -97,12 +96,6 @@ def CheckForUpdate():
 
     # play_missing_file_error()
     return
-
-
-def get_usb_index():
-    for i in range(p.get_device_count()):
-        if "USB" in p.get_device_info_by_index(i)['name']:
-            return p.get_device_info_by_index(i)['index']
 
 
 def play_update_success():
