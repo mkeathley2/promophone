@@ -3,7 +3,7 @@ from datetime import datetime
 from time import sleep
 
 lunch_rings = 0
-lunch_ring_max = 200
+lunch_ring_max = 3
 
 dinner_rings = 0
 dinner_ring_max = 2
@@ -31,7 +31,7 @@ while True:
         if core.rand_ring() and c_time.hour != last_ring:
             core.Ring()
             lunch_rings += 1
-            # last_ring = c_time.hour
+            last_ring = c_time.hour
             core.Ring()
 
     # # # RING TEST CODE. DON'T FORGET TO COMMENT OUT
