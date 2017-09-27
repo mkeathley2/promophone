@@ -7,6 +7,7 @@ import shutil
 from gpiozero import Button
 
 pygame.init()
+pygame.mixer.init()
 
 # Varibles
 audio_file = "PromoPhone.mp3"
@@ -31,7 +32,7 @@ def OffHook():
     # Mute Right Channel, Turn Left to 100%
     os.system("amixer -c 1 sset PCM,0 100%,0% unmute")
 
-    pygame.mixer.init()
+
     pygame.mixer.music.load(program_directory + audio_file)
     print("loaded file {}".format(program_directory + audio_file))
     pygame.mixer.music.play()
@@ -65,7 +66,7 @@ def Ring():
    # Mute Left Channel, Turn Right to 100%
     os.system("amixer -c 1 sset PCM,0 0%,80% unmute")
 
-    pygame.mixer.init()
+
     pygame.mixer.music.load(program_directory + ring_file)
 
     pygame.mixer.music.play()
@@ -110,7 +111,6 @@ def CheckForUpdate():
 
 
 def play_update_success():
-    pygame.mixer.init()
     pygame.mixer.music.load(program_directory + success_file)
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
@@ -122,7 +122,6 @@ def play_update_success():
 
 
 def play_missing_file_error():
-    pygame.mixer.init()
     pygame.mixer.music.load(program_directory + error_file)
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
