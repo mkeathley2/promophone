@@ -13,6 +13,7 @@ hook = Button(2)
 Default_Frequency = 60
 Lunch_Frequency = 15
 
+
 def OffHook():
     print("Playing MP3 File...")
 
@@ -71,9 +72,9 @@ def CheckForUpdate():
     path = "/media/pi/"
     dirs = os.listdir(path)
 
-    for dir in dirs:
+    for directory in dirs:
 
-        update_path = path + dir
+        update_path = path + directory
         print(update_path)
 
         update_path_full = update_path + '/' + audio_file
@@ -107,6 +108,7 @@ def play_update_success():
             OnHook()
             break
 
+
 def play_missing_file_error():
     pygame.mixer.init()
     pygame.mixer.music.load("UpdateError.mp3")
@@ -117,4 +119,3 @@ def play_missing_file_error():
         else:
             OnHook()
             break
-
