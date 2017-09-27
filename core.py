@@ -1,3 +1,5 @@
+import random
+
 import pygame
 import os
 import sys
@@ -8,13 +10,19 @@ from gpiozero import Button
 
 p = pyaudio.PyAudio()
 pygame.init()
-# Varibles
 
+# Varibles
 audio_file = "PromoPhone.mp3"
 promo_file_location = "./"
 hook = Button(2)
 Default_Frequency = 60
 Lunch_Frequency = 15
+lunch_hours = [11, 12, 13, 14]
+dinner_hours = [18, 19, 20]
+
+# Lower the ring chance variable to increase likelihood of ring
+ring_chance = 8
+
 
 def OffHook():
     print("Playing MP3 File...")
@@ -116,6 +124,7 @@ def play_update_success():
             OnHook()
             break
 
+
 def play_missing_file_error():
     pygame.mixer.init()
     pygame.mixer.music.load("UpdateError.mp3")
@@ -127,3 +136,10 @@ def play_missing_file_error():
             OnHook()
             break
 
+
+def rand_ring():
+    r_int = int(random.randrange(0, 100))
+    if r_int % ring_chance == 0 and r_int != 0:
+        return True
+    else:
+        return False
