@@ -18,7 +18,7 @@ lunch_hours = [11, 12, 13, 14]
 dinner_hours = [18, 19, 20]
 
 # Lower the ring chance variable to increase likelihood of ring
-ring_chance = 8
+ring_chance = 25
 
 
 

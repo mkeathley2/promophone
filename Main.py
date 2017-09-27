@@ -4,6 +4,7 @@ from time import sleep
 
 lunch_rings = 0
 dinner_rings = 0
+last_ring = 0
 
 while True:
     c_time = datetime.now()
@@ -23,17 +24,21 @@ while True:
         break
 
     if c_time.hour in core.lunch_hours and lunch_rings <= 2:
-        if core.rand_ring():
+        if core.rand_ring() and c_time.hour != last_ring:
             core.Ring()
             lunch_rings += 1
+            last_ring = c_time.hour
+            core.Ring()
 
     # # # RING TEST CODE. DON'T FORGET TO COMMENT OUT
     # if datetime.now().minute in [31, 32]:
     #     core.Ring()
 
     if c_time.hour in core.dinner_hours and dinner_rings <= 2:
-        if core.rand_ring():
+        if core.rand_ring() and c_time.hour != last_ring:
             core.Ring()
             dinner_rings += 1
+            last_ring = c_time.hour
+            core.Ring()
 
     sleep(.5)
