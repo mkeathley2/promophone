@@ -30,7 +30,7 @@ def OffHook():
     print("Playing MP3 File...")
 
     # Mute Right Channel, Turn Left to 100%
-    os.system("amixer -c 1 sset PCM,0 80%,0% unmute")
+    os.system("amixer -c 1 sset PCM,0 70%,0% unmute")
 
 
     pygame.mixer.music.load(program_directory + audio_file)
@@ -111,6 +111,8 @@ def CheckForUpdate():
 
 
 def play_update_success():
+    # Mute Right Channel, Turn Left to 100%
+    os.system("amixer -c 1 sset PCM,0 70%,0% unmute")
     pygame.mixer.music.load(program_directory + success_file)
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
@@ -122,6 +124,8 @@ def play_update_success():
 
 
 def play_missing_file_error():
+    # Mute Right Channel, Turn Left to 100%
+    os.system("amixer -c 1 sset PCM,0 70%,0% unmute")
     pygame.mixer.music.load(program_directory + error_file)
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
