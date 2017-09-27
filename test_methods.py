@@ -1,13 +1,17 @@
-import os
-import pygame
+import random
 
-os.system("export AUDIODEV=hdmi:0,0")
-pygame.init()
-pygame.mixer.init()
-pygame.mixer.music.load('Ring.mp3')
-pygame.mixer.music.play()
-while pygame.mixer.music.get_busy():
-	pygame.time.Clock().tick(10)
+count = 0
+iterations = 48
+iter = 0
+while iter <= iterations:
+    r_int = int(random.randrange(0,100))
+    if r_int % 8 == 0 and r_int != 0:
+        print(r_int)
+        count += 1
+    iter += 1
+print(count)
+
+
 
 # def get_usb_index():
 # 	for i in range(p.get_device_count()):
