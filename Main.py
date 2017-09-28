@@ -27,7 +27,7 @@ while True:
         core.OffHook()
         break
 
-    if c_time.hour in core.lunch_hours and lunch_rings <= lunch_ring_max:
+    if c_time.hour in core.lunch_hours and lunch_rings <= lunch_ring_max and c_time.minute in core.ring_minutes:
         if core.rand_ring() and c_time.hour != last_ring:
             core.Ring()
             lunch_rings += 1
@@ -38,7 +38,7 @@ while True:
     # if datetime.now().minute in [31, 32]:
     #     core.Ring()
 
-    if c_time.hour in core.dinner_hours and dinner_rings <= dinner_ring_max:
+    if c_time.hour in core.dinner_hours and dinner_rings <= dinner_ring_max and c_time.minute in core.ring_minutes:
         if core.rand_ring() and c_time.hour != last_ring:
             core.Ring()
             dinner_rings += 1

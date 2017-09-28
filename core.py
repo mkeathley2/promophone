@@ -20,6 +20,7 @@ Default_Frequency = 60
 Lunch_Frequency = 15
 lunch_hours = [11, 12, 13, 14]
 dinner_hours = [18, 19, 20]
+ring_minutes = [8, 16, 32, 48, 51]
 
 # Lower the ring chance variable to increase likelihood of ring
 ring_chance = 1
